@@ -13,12 +13,11 @@ export const Container = styled.div`
 export const Tittle = styled.h2`
     font-size: 32px;
     font-weight: 800;
-    color: #9758a6;
+    color: #61a120;
     padding-bottom: 12px;
     position: relative;
     text-align: center;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    margin: 70px 0px;
 
     &::after{
         content: '';
@@ -27,7 +26,7 @@ export const Tittle = styled.h2`
         left: calc(50% - 28px);
         width: 56px;
         height: 4px;
-        background-color: #9758a6;
+        background-color: #61a120;
 
     }
 
