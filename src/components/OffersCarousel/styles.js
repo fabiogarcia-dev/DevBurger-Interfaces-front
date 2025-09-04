@@ -6,7 +6,22 @@ export const Container = styled.div`
     }
 
     padding-left: 40px;
+    padding-bottom: 40px;
 
+     overflow-x: hidden;
+    .react-multi-carousel-list{ 
+        overflow: visible;
+    }
+
+    .react-multiple-carousel__arrow--left {
+        left: 10px;
+        top: 15px;
+    }
+
+   .react-multiple-carousel__arrow--right {
+        right: 10px;
+        top: 15px;
+    }
 
 `;
 
@@ -29,8 +44,7 @@ export const Tittle = styled.h2`
         background-color: #61a120;
 
     }
-
-
+   
 `;
 
 export const ContainerItems = styled.div`
