@@ -17,8 +17,6 @@ export function OffersCarousel() {
             .map((product) => ({currencyValue: formatPrice(product.price),...product,}));
 
             setOffers(onlyOffers);
-            console.log(onlyOffers);
-
         }
 
         loadProducts();
