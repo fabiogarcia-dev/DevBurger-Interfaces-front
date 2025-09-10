@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom"
 
 import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, Link } from './styles';
 import Logo from '../../assets/logo.svg';
-import { Button } from '../../components/Button';
+import { Button } from '../../components';
 
 export function Register() {
     const navigate = useNavigate();

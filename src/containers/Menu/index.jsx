@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Banner, CategoryMenu, ProductsContainer, CategoryButton } from "./styles";
 import { api } from "../../services/api";
 import { formatPrice } from "../../utils/formatPrice";
-import { CardProduct } from "../../components/CardProduct";
+import { CardProduct } from "../../components";
 import { useLocation, useNavigate } from "react-router-dom";
 
 
