@@ -63,7 +63,7 @@ export const CartProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const clientCartData = localStorage.getItem('devbuerger: cartInfo');
+        const clientCartData = localStorage.getItem('devburger: cartInfo');
         if (clientCartData) {
             setCartProducts(JSON.parse(clientCartData));
         }

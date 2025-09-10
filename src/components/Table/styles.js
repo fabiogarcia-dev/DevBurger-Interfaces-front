@@ -21,6 +21,7 @@ export const Th = styled.th`
     color: #fff;
     background-color: #484848;
     border-bottom: 1px solid #cdcdcd;
+    font-weight: 500;
 
     &:last-child{
         border-top-right-radius: 20px;
