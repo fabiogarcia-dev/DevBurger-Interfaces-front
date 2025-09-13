@@ -11,18 +11,20 @@ import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, 
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
 
-export function Login() {
+/**Tela de login */
+
+export function Login() { 
     const navigate = useNavigate();
     const { putUserData } = userUser();
 
-    const schema = yup
+    const schema = yup  //Define o schema de validação com yup
         .object({
             email: yup.string().email('Digite um e-mail válido').required('O e-mail é obrigatório'),
             password: yup.string().min(6, 'A senha deve ter pelo menos 6 caracteres').required('Digite a senha'),
         })
         .required()
 
-    const {
+    const {  //conecta inputs ao formulário
         register,
         handleSubmit,
         formState: { errors },
@@ -30,6 +32,7 @@ export function Login() {
         resolver: yupResolver(schema),
     })
 
+        /**Envia uma requisição POST /session com email e senha. */
     const onSubmit = async (data) => {
             const { data: userData } = await toast.promise(
                 api.post("/session", {

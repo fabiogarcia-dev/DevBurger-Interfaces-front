@@ -1,5 +1,10 @@
 import {createContext, useContext, useState, useEffect } from "react";
 
+/**Estado do usuário logado
+Persistência em localStorage
+Login e logout
+Disponibilização de dados do usuário globalmente */
+
 const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
@@ -16,6 +21,8 @@ export const UserProvider = ({ children }) => {
         localStorage.removeItem("deburger:userData");
     };
 
+/**Ao montar o componente, verifica se já existem dados de usuário salvos no localStorage e os carrega para o estado. */
+
     useEffect(() => {
         const userInfoLocalStorage = localStorage.getItem("deburger:userData");
         if(userInfoLocalStorage) {
@@ -23,6 +30,8 @@ export const UserProvider = ({ children }) => {
         }
     },[]);
     
+    /**Disponibiliza userInfo, putUserData e logout para todos os componentes filhos que consumirem o contexto. */
+
     return (
         <UserContext.Provider value={{userInfo, putUserData, logout}}>
             {children}

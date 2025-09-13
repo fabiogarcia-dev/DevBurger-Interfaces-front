@@ -7,6 +7,12 @@ import { Container, Tittle } from './styles';
 import { CardProduct } from '../CardProduct';
 import { formatPrice } from '../../utils/formatPrice';
 
+/**Busca a lista de categorias no backend (/categories) em ofertas
+Mostra essas categorias em um carrossel responsivo
+Cada categoria aparece com:
+imagem de fundo
+botão com o nome da categoria */
+
 export function OffersCarousel() {
     const [offers, setOffers] = useState([]);
     useEffect(() => {

@@ -9,6 +9,13 @@ import { Container, Form, InputContainer, LeftContainer, RightContainer, Title, 
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components';
 
+/**Valida cada campo obrigatório
+Renderiza a tela de cadastro do usuário.
+Valida os campos usando react-hook-form + yup.
+Envia os dados para o backend (/users) para criar a conta.
+Exibe mensagens de sucesso ou erro com toast.
+Redireciona para a página de login se o cadastro for bem-sucedido.
+ */
 export function Register() {
     const navigate = useNavigate();
     const schema = yup
@@ -32,68 +39,68 @@ export function Register() {
 
     const onSubmit = async (data) => {
         try {
-            const { status } = await api.post("/users", {
-                    name: data.name,
-                    email: data.email,
-                    password: data.password,
-                },
+            const { status } = await api.post("/users", {  //Envia uma requisição POST /users para criar a conta.
+                name: data.name,
+                email: data.email,
+                password: data.password,
+            },
                 {
-                    validateStatus: () => true,  
+                    validateStatus: () => true,
                 },
-            );   
-            
-            if(status === 200 || status === 201) {
+            );
+
+            if (status === 200 || status === 201) {
                 setTimeout(() => {
                     navigate("/login");
                 }, 2000);
                 toast.success("Conta criada com sucesso! 👌");
-            }else if(status === 409) {
+            } else if (status === 409) {
                 toast.error("Email já cadastrado! Fça o login para continuar. 🤯");
-            }else{
+            } else {
                 throw new Error();
             }
         } catch (err) {
-        toast.error("😭 Falha no Sistema! Tente novamente");
+            toast.error("😭 Falha no Sistema! Tente novamente");
         }
     };
 
 
-return (
-    <Container>
-        <LeftContainer>
-            <img src={Logo} alt="logo-Devburger" />
-        </LeftContainer>
-        <RightContainer>
-            <Title>Criar Conta</Title>
-            <Form onSubmit={handleSubmit(onSubmit)}>
-                <InputContainer>
-                    <label>Nome</label>
-                    <input type="text" {...register("name")} />
-                    <p>{errors?.name?.message}</p>
-                </InputContainer>
+    return (
+        <Container>
+            <LeftContainer>
+                <img src={Logo} alt="logo-Devburger" />
+            </LeftContainer>
+            <RightContainer>
+                <Title>Criar Conta</Title>
+                <Form onSubmit={handleSubmit(onSubmit)}>
+                    <InputContainer>
+                        <label>Nome</label>
+                        <input type="text" {...register("name")} />
+                        <p>{errors?.name?.message}</p>
+                    </InputContainer>
 
-                <InputContainer>
-                    <label>Email</label>
-                    <input type="email" {...register("email")} />
-                    <p>{errors?.email?.message}</p>
-                </InputContainer>
+                    <InputContainer>
+                        <label>Email</label>
+                        <input type="email" {...register("email")} />
+                        <p>{errors?.email?.message}</p>
+                    </InputContainer>
 
-                <InputContainer>
-                    <label>Senha</label>
-                    <input type="password" {...register("password")} />
-                    <p>{errors?.password?.message}</p>
-                </InputContainer>
+                    <InputContainer>
+                        <label>Senha</label>
+                        <input type="password" {...register("password")} />
+                        <p>{errors?.password?.message}</p>
+                    </InputContainer>
 
-                <InputContainer>
-                    <label>Confirmar Senha</label>
-                    <input type="password" {...register("confirmPassword")} />
-                    <p>{errors?.confirmPassword?.message}</p>
-                </InputContainer>
-                <Button type="submit">Criar Conta</Button>
-            </Form>
-            <p>Já possui conta? <Link to="/login">Clique aqui.</Link></p>
-        </RightContainer>
-    </Container>
+                    <InputContainer>
+                        <label>Confirmar Senha</label>
+                        <input type="password" {...register("confirmPassword")} />
+                        <p>{errors?.confirmPassword?.message}</p>
+                    </InputContainer>
+                    <Button type="submit">Criar Conta</Button>
+                </Form>
+                <p>Já possui conta? <Link to="/login">Clique aqui.</Link></p>
+            </RightContainer>
+        </Container>
 
-);
+    );
 }

@@ -2,7 +2,7 @@ import Cart from '../../assets/cart.svg';
 
 import { ContainerButton } from "./styles";
 
-/*estilização do icone sacola que fica no botão*/
+/**botão estilizado que mostra apenas o ícone de um carrinho de compras (sacola). */
 
 export function CardButton({...props}) {
     return (

@@ -3,6 +3,8 @@ import { UserCircle, ShoppingCart } from "@phosphor-icons/react";
 import { useNavigate, useResolvedPath  } from "react-router-dom";
 import {userUser} from "../../hooks/UserContext"
 
+/**cabeçalho do site com funções dos dados de carrinho e de login */
+
 export function Header() {
     const navigate = useNavigate();
     const { logout, userInfo } = userUser();

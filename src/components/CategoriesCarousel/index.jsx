@@ -6,6 +6,12 @@ import { useNavigate} from 'react-router-dom';
 import { api } from '../../services/api';
 import { Container, Tittle, ContainerItems, CategoryButton } from './styles';
 
+/**Busca a lista de categorias no backend (/categories)
+Mostra essas categorias em um carrossel responsivo
+Cada categoria aparece com:
+imagem de fundo
+botão com o nome da categoria */
+
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();

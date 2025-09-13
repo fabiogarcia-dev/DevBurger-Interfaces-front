@@ -1,6 +1,8 @@
 import { OffersCarousel, CategoriesCarousel } from "../../components";
 import { Banner, Container } from "./styles";
 
+/**Pagina principal */
+
 export function Home() {
     return (
         <main>

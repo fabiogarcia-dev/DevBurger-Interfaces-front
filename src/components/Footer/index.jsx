@@ -1,5 +1,7 @@
 import { Container } from "./styles";
 
+/**Cria o Rodapé em todas as paginas */
+
 export function Footer(){
 
     return (

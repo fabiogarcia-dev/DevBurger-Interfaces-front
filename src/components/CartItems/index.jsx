@@ -4,6 +4,7 @@ import { formatPrice } from '../../utils/formatPrice';
 import { EmptyCart, ButtonGroup, ProductImage, ProductTotalPrice, TrashImage } from './styles';
 import TrashIcon from '../../assets/trash.svg';
 
+/**componente responsável por exibir todos os produtos que estão no carrinho de compras em forma de tabela. */
 export function CartItems() {
     const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } = useCart();
     return (
@@ -19,8 +20,8 @@ export function CartItems() {
                 </Table.Tr>
             </Table.Header>
             <Table.Body>
-                {cartProducts?.length ? (
-                    cartProducts.map(product => (
+                {cartProducts?.length ? ( //Verifica se existem produtos no carrinho
+                    cartProducts.map(product => (  //Se houver produtos, faz um .map para renderizar cada produto como uma linha da tabela.
                         <Table.Tr key={product.id}>
                             <Table.Td><ProductImage src={product.url} /></Table.Td>
                             <Table.Td>{product.name}</Table.Td>
