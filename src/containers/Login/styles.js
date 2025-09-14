@@ -73,7 +73,7 @@ export const Title = styled.h2`
         line-height: 100%;
         letter-spacing: 0%;
         text-align: center;
-        color: #9758a6;
+        color: ${(props) => props.theme.purple} ;
     }
 `
 

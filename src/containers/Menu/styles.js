@@ -24,7 +24,7 @@ export const Banner = styled.div`
     position: relative;
 
     background: url('${BannerHambuerger}')no-repeat;
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     background-position: center;
     background-size: cover;
 

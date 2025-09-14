@@ -59,7 +59,7 @@ export const Title = styled.h2`
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
 `;
 
 export const Form = styled.form`

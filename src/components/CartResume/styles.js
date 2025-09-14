@@ -26,7 +26,7 @@ export const Container = styled.div`
            font-weight: 20px;
            margin-bottom: 20px;
            font-weight: 700;
-           background-color: #484848;
+           background-color: ${(props) => props.theme.secondBlack};
            color: #fff;
            width: 100%;
             padding: 15px;

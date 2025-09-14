@@ -15,7 +15,7 @@ export const Banner = styled.div`
     background: url('${texture}');
     background-size: cover;
     background-position: center;
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     display: flex;
     align-items: center;
     justify-content: center;
