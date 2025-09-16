@@ -13,18 +13,18 @@ export const UserProvider = ({ children }) => {
     const putUserData = (userInfo) => {
         setUserInfo(userInfo);
     
-        localStorage.setItem("deburger:userData", JSON.stringify(userInfo));
+        localStorage.setItem("devburger:userData", JSON.stringify(userInfo));
     };
 
     const logout = () => {
         setUserInfo({});
-        localStorage.removeItem("deburger:userData");
+        localStorage.removeItem("devburger:userData");
     };
 
 /**Ao montar o componente, verifica se já existem dados de usuário salvos no localStorage e os carrega para o estado. */
 
     useEffect(() => {
-        const userInfoLocalStorage = localStorage.getItem("deburger:userData");
+        const userInfoLocalStorage = localStorage.getItem("devburger:userData");
         if(userInfoLocalStorage) {
             setUserInfo(JSON.parse(userInfoLocalStorage));
         }
