@@ -1,8 +1,16 @@
-# React + Vite
+# ⚛️ Frontend - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o **frontend** do projeto que consome a API com **MongoDB (produtos)** e **PostgreSQL (usuários)**.  
+O frontend foi desenvolvido em **React + Vite**, garantindo alta performance e um ambiente de desenvolvimento rápido.
 
-Currently, two official plugins are available:
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [React](https://react.dev/) - Biblioteca para interfaces
+- [Vite](https://vitejs.dev/) - Build tool rápido
+- [Axios](https://axios-http.com/) - Requisições HTTP para a API
+- [React Router](https://reactrouter.com/) - Navegação entre páginas
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
